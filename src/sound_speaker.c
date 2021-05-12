@@ -23,6 +23,7 @@ static bool playing = false;
 static u8 current_note = NOTE_NONE;
 
 static void pause() {
+    playing = false;
     outportb(0x61, inportb(0x61) & 0xFC);
 }
 
@@ -48,10 +49,15 @@ void sound_tick_device() {
 
     if (note == current_note) {
         return;
-    } else if (note == NOTE_NONE) {
-        pause();
     }
+    
+    current_note = note;
 
+    if ((note & 0xF) == NOTE_NONE) {
+        pause();
+        return;
+    }
+    
     play(notes[note >> 4][note & 0xF]);
 }
 

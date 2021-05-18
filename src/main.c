@@ -19,11 +19,11 @@
 
 #define LOGO_HEIGHT 5
 static const char *LOGO[LOGO_HEIGHT] = {
-    "AAA BBB CCC DD  EEE FFF",
-    " A  B    C  D D  E  F  ",
-    " A  BBB  C  DD   E  FFF",
-    " A  B    C  D D  E    F",
-    " A  BBB  C  D D EEE FFF",
+    "AAA BBB CCCCC DDD",
+    " A  B      C   D",
+    " A  BBB   C    D",
+    " A  B      C    D",
+    " A  BBB  CCCC  D",
 };
 
 #define NUM_TILES (BORDER + 1)
